@@ -1091,3 +1091,27 @@ section {
         background-position: 1000px 0;
     }
 }
+/* Portfolio refinement: clear reading hierarchy and comfortable mobile layout */
+.hero { min-height: 68vh; padding: 88px 0; gap: 48px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.12; max-width: 780px; }
+.hero-description { font-size: clamp(1.05rem, 1.8vw, 1.2rem); line-height: 1.75; color: var(--text-secondary); max-width: 570px; margin: 22px 0 30px; white-space: normal; overflow: visible; }
+.hero-actions { margin-bottom: 0; }
+.contact-content { grid-template-columns: minmax(0, 720px); }
+.contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.contact-method { min-width: 0; }
+.method-value { overflow-wrap: anywhere; }
+.project-links a { display: inline-flex; align-items: center; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+.project-card { height: 100%; }
+.project-card p { min-height: 5.5em; }
+section { scroll-margin-top: 85px; }
+@media (max-width: 800px) {
+  .hero { min-height: auto; padding: 65px 0; }
+  .hero h1 { letter-spacing: -1.5px; }
+  .hero-description { font-size: 1.05rem; }
+  .contact-content { display: block; }
+  .project-card p { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .gradient-text, .hero-content, .terminal { animation: none !important; }
+  html { scroll-behavior: auto; }
+}
